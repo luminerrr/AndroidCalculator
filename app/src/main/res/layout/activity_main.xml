@@ -1,33 +1,119 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#F5F5F5"
+    android:animateLayoutChanges="true">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <!-- Input Fields -->
+    <EditText
+        android:id="@+id/etNumber1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:hint="Enter first number"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#6200EA"
+        android:textColor="#6200EA"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:elevation="2dp"
+        android:transitionName="inputField" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+    <EditText
+        android:id="@+id/etNumber2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter second number"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#6200EA"
+        android:textColor="#6200EA"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:elevation="2dp"
+        android:transitionName="inputField" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <!-- Operation Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:weightSum="4">
 
-    <include layout="@layout/content_main" />
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_margin="8dp"
+            android:padding="16dp"
+            android:background="#03DAC5"
+            android:elevation="4dp" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        <Button
+            android:id="@+id/btnSubtract"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_margin="8dp"
+            android:padding="16dp"
+            android:background="#03DAC5"
+            android:elevation="4dp" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="*"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_margin="8dp"
+            android:padding="16dp"
+            android:background="#03DAC5"
+            android:elevation="4dp" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="/"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_margin="8dp"
+            android:padding="16dp"
+            android:background="#03DAC5"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+    <!-- Result Display -->
+    <TextView
+        android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        android:text="Result"
+        android:textSize="26sp"
+        android:textColor="#6200EA"
+        android:layout_marginTop="32dp"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:transitionName="resultField"
+        android:elevation="2dp"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>
