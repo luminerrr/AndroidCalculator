@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androidcalculator.databinding.ActivityMainBinding
 
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         if (number1 == null || number2 == null) {
             binding.tvResult.text = "Please enter valid numbers"
+            Toast.makeText(this,"Please enter valid number", Toast.LENGTH_SHORT).show()
             return
         }
 
