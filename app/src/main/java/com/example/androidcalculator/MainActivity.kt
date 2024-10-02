@@ -17,13 +17,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set up click listeners for operation buttons
+        // Buat Set up click listeners pake binding
         binding.btnAdd.setOnClickListener { performOperation("+") }
         binding.btnSubtract.setOnClickListener { performOperation("-") }
         binding.btnMultiply.setOnClickListener { performOperation("*") }
         binding.btnDivide.setOnClickListener { performOperation("/") }
     }
 
+    //Fun buat ngitung berdasarkan operation
     private fun performOperation(operation: String) {
         // Get input values
         val number1 = binding.etNumber1.text.toString().toDoubleOrNull()
