@@ -51,6 +51,6 @@ class MainActivity : AppCompatActivity() {
             else -> "Invalid operation"
         }
 
-        binding.tvResult.text = result.toString()
+        binding.tvResult.text =  String.format("%.2f", result)
     }
 }
