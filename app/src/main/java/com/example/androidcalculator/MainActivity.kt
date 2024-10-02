@@ -40,7 +40,14 @@ class MainActivity : AppCompatActivity() {
             "+" -> number1 + number2
             "-" -> number1 - number2
             "*" -> number1 * number2
-            "/" -> if (number2 != 0.0) number1 / number2 else "Cannot divide by zero"
+            "/" -> {
+                if (number2 != 0.0) {
+                    number1 / number2
+                } else {
+                    Toast.makeText(this, "Cannot divide by zero", Toast.LENGTH_SHORT).show()
+                    "Cannot divide by zero"
+                }
+            }
             else -> "Invalid operation"
         }
 
